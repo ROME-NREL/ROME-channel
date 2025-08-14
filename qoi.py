@@ -36,3 +36,10 @@ def solve_utau(u, zf):
     if iters == 25:
         print("ERROR in utau computation")
     return curr
+
+
+def get_qois(snapshot, Z):
+    return {
+        "zprof": get_z_profile(snapshot[0]),
+        "utau": get_utau(snapshot[0], snapshot[1], Z),
+    }
