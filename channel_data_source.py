@@ -13,6 +13,9 @@ class ChannelDataSource:
             assert isinstance(dset, h5py.Dataset)
             shape = dset.shape
             self.fields = f["fields"][()]
+            self.x = f["x"][()]
+            self.y = f["y"][()]
+            self.z = f["z"][()]
         self.dim_order = ["times", "fields", "x", "y", "z"]
         self.n_snapshots = shape[0]
 
